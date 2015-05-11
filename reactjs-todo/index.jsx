@@ -1,8 +1,8 @@
 import React from 'react';
-import Todo from './components/todo'
+import TaskInput from './components/task-input'
 
 React.render(
-    <Todo test='this is a test'/>,
+    <TaskInput />,
     document.body
 )
 
