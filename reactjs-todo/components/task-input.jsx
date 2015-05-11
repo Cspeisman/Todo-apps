@@ -7,7 +7,7 @@ export class TaskInput extends React.Component {
 
   submit(event){
     event.preventDefault();
-    fetch('http://localhost:8000/tasks/')
+    fetch('http://lvh.me:8000/tasks/')
     .then(function(response) {
         return response.json()
     }).then(function(json) {
