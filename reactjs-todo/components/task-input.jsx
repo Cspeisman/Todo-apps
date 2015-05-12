@@ -7,18 +7,24 @@ export class TaskInput extends React.Component {
 
   submit(event){
     event.preventDefault();
-    fetch('http://lvh.me:8000/tasks/')
-    .then(function(response) {
-        return response.json()
-    }).then(function(json) {
-        console.log('parsed json', json)
-    }).catch(function(ex) {
-        console.log('parsing failed', ex)
+
+    fetch('http://lvh.me:8000/tasks/',
+          {method: 'post', 
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'},
+          body: JSON.stringify({description: this.state.value})
     })
+
+    .then(function(response) {
+      return response.json()
+    }).catch(function(ex) {
+      console.log('parsing failed', ex)
+    })
+    this.setState({value: ''})
   }
 
   setValue(event) {
-    console.log(event.target.value)
     this.setState({value: event.target.value});
   }
 
