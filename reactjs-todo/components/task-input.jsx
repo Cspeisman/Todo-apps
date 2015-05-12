@@ -18,7 +18,11 @@ export class TaskInput extends React.Component {
 
     .then(function(response) {
       return response.json()
-    }).catch(function(ex) {
+    })
+    .then(function(json){
+      console.log('here is resp: ', json)
+    })
+    .catch(function(ex) {
       console.log('parsing failed', ex)
     })
     this.setState({value: ''})
