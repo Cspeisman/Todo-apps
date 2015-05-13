@@ -33,7 +33,7 @@ class TodoWrapper extends React.Component {
   render() {
     return (
         <div>
-          <TaskInput {...this.state} addTask={this.addTask} setValue={this.setValue.bind(this)}/>
+          <TaskInput {...this.state} addTask={this.addTask.bind(this)} setValue={this.setValue.bind(this)}/>
           <TaskList items={this.state.items} />
         </div>
     )
